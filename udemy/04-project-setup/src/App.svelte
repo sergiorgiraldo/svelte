@@ -6,20 +6,44 @@
 			id: "p1",
 			title: "a book",
 			price: 9.99
+		},
+		{
+			id: "p2",
+			title: "a pencil",
+			price: 1.29
 		}
 	];
+	let showModal = false;
 </script>
 
 {#each products as product}
-	<Product
-		{...product}
-		on:add-cart={(e) => alert("Added to cart:" + e.detail)}
-		on:delete-cart={() => alert("Deleted from cart")} />
+	<p>
+		<Product
+			{...product}
+			on:add-cart={(e) => alert("Added to cart:" + e.detail)}
+			on:delete-cart={() => alert("Deleted from cart")} />
+	</p>
 {/each}
 
-<Modal>
-	<h1 slot="header">Hi martians!</h1>
-	<p>
-		Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quam tempore, neque ab aspernatur ullam sint. Ex provident qui eos officiis perferendis adipisci doloribus, animi, enim, doloremque dignissimos laboriosam accusamus?
-	</p>
-</Modal>>
+<br />
+
+<button on:click={() => (showModal = true)}>Show Modal</button>
+
+{#if showModal}
+	<Modal
+		on:cancel={() => (showModal = false)}
+		on:close={() => (showModal = false)}
+		let:didAgree={closeable}>
+		<h1 slot="header">Hello!</h1>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+			placeat libero vero aspernatur dignissimos animi rerum minima
+			delectus natus rem velit eaque laborum, eum ad ratione iusto cum
+			sint! Sit.
+		</p>
+		<button
+			slot="footer"
+			on:click={() => (showModal = false)}
+			disabled={!closeable}>Confirm</button>
+	</Modal>
+{/if}

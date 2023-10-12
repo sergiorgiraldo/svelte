@@ -1,17 +1,29 @@
+<script>
+	import { createEventDispatcher } from "svelte";
+	const dispatch = createEventDispatcher();
+	let agreed = false;
+</script>
 
-<div class="backdrop" />
+<div class="backdrop" on:click={() => dispatch("cancel")} />
+    
 <div class="modal">
-    <header>
-        <slot name="header" />
-    </header>
-    <div class="content">
-        <slot />    
-    </div>
-    <footer>
-        <slot name="footer">
-            <button>Close</button>
-        </slot>
-    </footer>
+	<header>
+		<slot name="header" />
+	</header>
+	<div class="content">
+		<slot />
+	</div>
+	<div class="disclaimer">
+		<p>Before you close, you need to agree to our terms!</p>
+		<button on:click={() => (agreed = true)}>Agree</button>
+	</div>
+	<footer>
+		<slot name="footer" didAgree={agreed}>
+			<button on:click={() => dispatch("close")} disabled={!agreed}>
+				Close
+			</button>
+		</slot>
+	</footer>
 </div>
 
 <style>
@@ -38,7 +50,7 @@
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
 		overflow: scroll;
 	}
-    header{
-        border-bottom: 3px solid purple;
-    }
+	header {
+		border-bottom: 3px solid purple;
+	}
 </style>
