@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/sergiorgiraldo/svelte/compare/v1.2.0...v1.3.0) (2023-10-12)
+
+
+### Features
+
+* third module udemy done, components, events and props ([fd4051c](https://github.com/sergiorgiraldo/svelte/commit/fd4051c63bb7cd9701f96abc2d021736b41b08fb))
+
 ## [1.2.0](https://github.com/sergiorgiraldo/svelte/compare/v1.1.0...v1.2.0) (2023-10-12)
 
 
