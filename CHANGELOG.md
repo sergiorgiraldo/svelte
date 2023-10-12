@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/sergiorgiraldo/svelte/compare/v1.1.0...v1.2.0) (2023-10-12)
+
+
+### Features
+
+* second module udemy done, loops and conditions in Svelte ([3f1b09f](https://github.com/sergiorgiraldo/svelte/commit/3f1b09ff622da36cace89577fa5d6e6373856436))
+
 ## [1.1.0](https://github.com/sergiorgiraldo/svelte/compare/v1.0.0...v1.1.0) (2023-10-12)
 
 
