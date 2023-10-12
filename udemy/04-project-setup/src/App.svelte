@@ -18,5 +18,8 @@
 {/each}
 
 <Modal>
-	<b>Hi martians!</b>
+	<h1 slot="header">Hi martians!</h1>
+	<p>
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quam tempore, neque ab aspernatur ullam sint. Ex provident qui eos officiis perferendis adipisci doloribus, animi, enim, doloremque dignissimos laboriosam accusamus?
+	</p>
 </Modal>>

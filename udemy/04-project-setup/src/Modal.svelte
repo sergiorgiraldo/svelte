@@ -1,7 +1,17 @@
 
 <div class="backdrop" />
 <div class="modal">
-    <slot />    
+    <header>
+        <slot name="header" />
+    </header>
+    <div class="content">
+        <slot />    
+    </div>
+    <footer>
+        <slot name="footer">
+            <button>Close</button>
+        </slot>
+    </footer>
 </div>
 
 <style>
@@ -20,7 +30,7 @@
 		position: fixed;
 		top: 10vh;
 		left: 10%;
-		width: 80%;
+		width: 60%;
 		max-height: 80vh;
 		background: white;
 		border-radius: 5px;
@@ -28,4 +38,7 @@
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
 		overflow: scroll;
 	}
+    header{
+        border-bottom: 3px solid purple;
+    }
 </style>
