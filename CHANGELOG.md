@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/sergiorgiraldo/svelte/compare/v1.3.0...v1.4.0) (2023-10-12)
+
+
+### Features
+
+* fourth module udemy, first iteration custom events ([e1cc618](https://github.com/sergiorgiraldo/svelte/commit/e1cc618d108cca294bc8a6faa15039e3574ac535))
+
 ## [1.3.0](https://github.com/sergiorgiraldo/svelte/compare/v1.2.0...v1.3.0) (2023-10-12)
 
 
