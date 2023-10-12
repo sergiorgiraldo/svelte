@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/sergiorgiraldo/svelte/compare/v1.0.0...v1.1.0) (2023-10-12)
+
+
+### Features
+
+* first module udemy done, basic Svelte ([c1a496c](https://github.com/sergiorgiraldo/svelte/commit/c1a496c106b659057c9a740ee2989cdf804bb018))
+
 ## 1.0.0 (2023-10-12)
 
 
