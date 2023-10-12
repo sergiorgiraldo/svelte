@@ -1,6 +1,6 @@
 <script>
 	import Product from "./Product.svelte";
-
+	import Modal from "./Modal.svelte";
 	const products = [
 		{
 			id: "p1",
@@ -16,3 +16,7 @@
 		on:add-cart={(e) => alert("Added to cart:" + e.detail)}
 		on:delete-cart={() => alert("Deleted from cart")} />
 {/each}
+
+<Modal>
+	<b>Hi martians!</b>
+</Modal>>
