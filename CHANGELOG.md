@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.5.0](https://github.com/sergiorgiraldo/svelte/compare/v1.4.0...v1.5.0) (2023-10-13)
+
+
+### Features
+
+* fourth module udemy, components lifecycle and lifecycle hooks ([8706a06](https://github.com/sergiorgiraldo/svelte/commit/8706a0650f72a9db93631781b8c29783afc35619))
+* fourth module udemy, slot props ([d2ba21d](https://github.com/sergiorgiraldo/svelte/commit/d2ba21dbd992e643de6dc3fe9a841a442a1f85e5))
+
 ## [1.4.0](https://github.com/sergiorgiraldo/svelte/compare/v1.3.0...v1.4.0) (2023-10-12)
 
 
