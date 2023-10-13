@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.0](https://github.com/sergiorgiraldo/svelte/compare/v1.8.0...v1.9.0) (2023-10-13)
+
+
+### Features
+
+* release 2.0.0 ([2bd374f](https://github.com/sergiorgiraldo/svelte/commit/2bd374f54cf59e788a198350187ed4e90bfde256))
+
 ## [1.8.0](https://github.com/sergiorgiraldo/svelte/compare/v1.7.0...v1.8.0) (2023-10-13)
 
 
