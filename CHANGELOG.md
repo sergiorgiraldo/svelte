@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.8.0](https://github.com/sergiorgiraldo/svelte/compare/v1.7.0...v1.8.0) (2023-10-13)
+
+
+### Features
+
+* feat!GH actions and release-please ([e353393](https://github.com/sergiorgiraldo/svelte/commit/e3533933c890a34aee29dd3c0ef48d6a7dbe2523))
+
+
+### Bug Fixes
+
+* fix.GH actions and release-please ([725b3b5](https://github.com/sergiorgiraldo/svelte/commit/725b3b59a4035279ea68913e779a024e19077e0d))
+
+
+### Performance Improvements
+
+* perf.GH actions and release-please ([aeafab4](https://github.com/sergiorgiraldo/svelte/commit/aeafab4ea24a6b98487207b8e8a1da0dae5629a1))
+
 ## [1.7.0](https://github.com/sergiorgiraldo/svelte/compare/v1.6.0...v1.7.0) (2023-10-13)
 
 
