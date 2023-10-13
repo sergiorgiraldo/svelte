@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://github.com/sergiorgiraldo/svelte/compare/v1.6.0...v1.7.0) (2023-10-13)
+
+
+### Features
+
+* testing GH actions and release-please ([1b70064](https://github.com/sergiorgiraldo/svelte/commit/1b700644ee82f57822c0280e5af39e0217dd0196))
+
 ## [1.6.0](https://github.com/sergiorgiraldo/svelte/compare/v1.5.0...v1.6.0) (2023-10-13)
 
 
