@@ -1,4 +1,5 @@
 <script>
+	import { tick } from "svelte";
 	import Product from "./Product.svelte";
 	import Modal from "./Modal.svelte";
 	const products = [
@@ -13,7 +14,34 @@
 			price: 1.29
 		}
 	];
+
 	let showModal = false;
+
+	let text =
+		"Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis officia harum deleniti illo numquam doloremque provident culpa repellendus commodi tempora? Earum natus odit eveniet sequi vel, beatae quas delectus obcaecati?";
+
+	async function transform(event) {
+		if (event.key != "Tab") {
+			return;
+		}
+		event.preventDefault();
+
+		const { selectionStart, selectionEnd, value } = this;
+		const selection = value.slice(selectionStart, selectionEnd);
+		const replacement = /[a-z]/.test(selection)
+			? selection.toUpperCase()
+			: selection.toLowerCase();
+
+		text =
+			value.slice(0, selectionStart) +
+			replacement +
+			value.slice(selectionEnd);
+
+		await tick();
+
+		this.selectionStart = selectionStart;
+		this.selectionEnd = selectionEnd;
+	}
 </script>
 
 {#each products as product}
@@ -47,3 +75,6 @@
 			disabled={!closeable}>Confirm</button>
 	</Modal>
 {/if}
+<p>
+	<textarea rows="5" cols="80" value={text} on:keydown={transform} />
+</p>
