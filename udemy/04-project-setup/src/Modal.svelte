@@ -1,17 +1,55 @@
+<script>
+	import { createEventDispatcher, onMount, onDestroy, beforeUpdate, afterUpdate } from "svelte";
 
-<div class="backdrop" />
+	const dispatch = createEventDispatcher();
+	
+	let agreed = false;
+	let autoscroll = false;
+
+	onMount(() => {
+		console.log("On mount");	
+	});
+
+	onDestroy(() => {
+		console.log("On destroy");	
+	});
+
+	beforeUpdate(()=>{
+		console.log("Before Update");
+		autoscroll = agreed;
+	});
+
+	afterUpdate(()=>{
+		console.log("After Update");
+		if (autoscroll){
+			const modal = document.querySelector(".modal");
+			modal.scrollTo(0, modal.scrollHeight);
+		}
+	});
+
+console.log("Script executed");
+</script>
+
+<div class="backdrop" on:click={() => dispatch("cancel")} />
+    
 <div class="modal">
-    <header>
-        <slot name="header" />
-    </header>
-    <div class="content">
-        <slot />    
-    </div>
-    <footer>
-        <slot name="footer">
-            <button>Close</button>
-        </slot>
-    </footer>
+	<header>
+		<slot name="header" />
+	</header>
+	<div class="content">
+		<slot />
+	</div>
+	<div class="disclaimer">
+		<p>Before you close, you need to agree to our terms!</p>
+		<button on:click={() => (agreed = true)}>Agree</button>
+	</div>
+	<footer>
+		<slot name="footer" didAgree={agreed}>
+			<button on:click={() => dispatch("close")} disabled={!agreed}>
+				Close
+			</button>
+		</slot>
+	</footer>
 </div>
 
 <style>
@@ -31,14 +69,14 @@
 		top: 10vh;
 		left: 10%;
 		width: 60%;
-		max-height: 80vh;
+		max-height: 15vh;
 		background: white;
 		border-radius: 5px;
 		z-index: 100;
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
 		overflow: scroll;
 	}
-    header{
-        border-bottom: 3px solid purple;
-    }
+	header {
+		border-bottom: 3px solid purple;
+	}
 </style>
