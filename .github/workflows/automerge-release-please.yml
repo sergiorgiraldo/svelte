@@ -1,0 +1,15 @@
+on:
+  pull_request:
+    types: [labeled]
+    branches:
+      - main
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Merge pull request
+        uses: peter-evans/merge-pull-request-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          merge-method: squash
