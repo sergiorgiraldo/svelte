@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/sergiorgiraldo/svelte/compare/v1.5.0...v1.6.0) (2023-10-13)
+
+
+### Features
+
+* update readme to test gh action ([8362744](https://github.com/sergiorgiraldo/svelte/commit/836274451c3a72af4a78723a4380cb1a70dfed55))
+
 ## [1.5.0](https://github.com/sergiorgiraldo/svelte/compare/v1.4.0...v1.5.0) (2023-10-13)
 
 
