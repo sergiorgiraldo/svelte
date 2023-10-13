@@ -1,5 +1,41 @@
 # Changelog
 
+## [2.0.0](https://github.com/sergiorgiraldo/svelte/compare/v1.8.0...v2.0.0) (2023-10-13)
+
+
+### ⚠ BREAKING CHANGES
+
+* testing bump to major
+
+### Features
+
+* release 2.0.0 ([2bd374f](https://github.com/sergiorgiraldo/svelte/commit/2bd374f54cf59e788a198350187ed4e90bfde256))
+* testing bump to major ([aaafef4](https://github.com/sergiorgiraldo/svelte/commit/aaafef4688831b414e25ba90127cea6e8ba27acd))
+
+## [1.8.0](https://github.com/sergiorgiraldo/svelte/compare/v1.7.0...v1.8.0) (2023-10-13)
+
+
+### Features
+
+* feat!GH actions and release-please ([e353393](https://github.com/sergiorgiraldo/svelte/commit/e3533933c890a34aee29dd3c0ef48d6a7dbe2523))
+
+
+### Bug Fixes
+
+* fix.GH actions and release-please ([725b3b5](https://github.com/sergiorgiraldo/svelte/commit/725b3b59a4035279ea68913e779a024e19077e0d))
+
+
+### Performance Improvements
+
+* perf.GH actions and release-please ([aeafab4](https://github.com/sergiorgiraldo/svelte/commit/aeafab4ea24a6b98487207b8e8a1da0dae5629a1))
+
+## [1.7.0](https://github.com/sergiorgiraldo/svelte/compare/v1.6.0...v1.7.0) (2023-10-13)
+
+
+### Features
+
+* testing GH actions and release-please ([1b70064](https://github.com/sergiorgiraldo/svelte/commit/1b700644ee82f57822c0280e5af39e0217dd0196))
+
 ## [1.6.0](https://github.com/sergiorgiraldo/svelte/compare/v1.5.0...v1.6.0) (2023-10-13)
 
 
