@@ -32,6 +32,10 @@
 
 	let editMode;
 
+	function cancelEdit() {
+    	editMode = null;
+  	}
+
 	function addMeetup(event) {
 		const newMeetup = {
 			id: Math.random().toString(),
@@ -43,7 +47,6 @@
 			address: event.detail.address
 		};
 
-		// meetups.push(newMeetup); // DOES NOT WORK!
 		meetups = [newMeetup, ...meetups];
 		editMode = null;
 	}
@@ -68,7 +71,7 @@
 		</Button>	
 	</div>
 	{#if editMode === "add"}
-		<EditMeetup on:save={addMeetup} />
+		<EditMeetup on:save={addMeetup} on:cancel={cancelEdit}/>
 	{/if}
 	<MeetupGrid {meetups} on:togglefavorite={toggleFavorite} />
 </main>
