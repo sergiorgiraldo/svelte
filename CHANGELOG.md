@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.1.0](https://github.com/sergiorgiraldo/svelte/compare/v2.0.0...v2.1.0) (2023-10-14)
+
+
+### Features
+
+* communication via custom events(favourite/unfavourite) ([2b672d8](https://github.com/sergiorgiraldo/svelte/commit/2b672d8d788a62b3f1af4c2ff2fa7d5964a2846e))
+* form to edit meetups ([df3d7a5](https://github.com/sergiorgiraldo/svelte/commit/df3d7a5a683cb7548530e75550219b18ea512858))
+* modal generic component+edit in the modal comp ([caf119b](https://github.com/sergiorgiraldo/svelte/commit/caf119b678141334f3db7090036a81a6ee403912))
+* slots for button caption ([98cd9eb](https://github.com/sergiorgiraldo/svelte/commit/98cd9eb567fb4858cd82f95237ca015389061499))
+* using slots(badge) ([9feff6f](https://github.com/sergiorgiraldo/svelte/commit/9feff6fed3ffa2947e1fe44731ab7dde82af181a))
+
 ## [2.0.0](https://github.com/sergiorgiraldo/svelte/compare/v1.8.0...v2.0.0) (2023-10-13)
 
 
