@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.2.0](https://github.com/sergiorgiraldo/svelte/compare/v2.1.0...v2.2.0) (2023-10-14)
+
+
+### Features
+
+* learning squash PR, this is aux branch ([e0c78dc](https://github.com/sergiorgiraldo/svelte/commit/e0c78dcbe83e10f56d51c1b9ebbb0551ba4d7204))
+* learning squash PR, this is aux branch ([#30](https://github.com/sergiorgiraldo/svelte/issues/30)) ([5c52d7a](https://github.com/sergiorgiraldo/svelte/commit/5c52d7ac6a96326e9c8e1471c1ef77f5ddfba3b7))
+* learning squash PR, this is dev branch ([a56cff7](https://github.com/sergiorgiraldo/svelte/commit/a56cff743bca609dafa38e5de2544c0e069da9d0))
+* learning squash PR, this is dev branch ([#31](https://github.com/sergiorgiraldo/svelte/issues/31)) ([6f05acb](https://github.com/sergiorgiraldo/svelte/commit/6f05acb0d3449cd3c47d76e4c082a271f11a4efa))
+
 ## [2.1.0](https://github.com/sergiorgiraldo/svelte/compare/v2.0.0...v2.1.0) (2023-10-14)
 
 
