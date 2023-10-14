@@ -3,7 +3,7 @@
 	export let caption;
 	export let href = null;
 	export let mode = null;
-	export let color;
+	export let color = null;
 </script>
 
 {#if href}
