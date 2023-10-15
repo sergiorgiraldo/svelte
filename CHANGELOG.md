@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.2.0](https://github.com/sergiorgiraldo/svelte/compare/v2.1.0...v2.2.0) (2023-10-15)
+
+
+### Features
+
+* component binding ([aaec722](https://github.com/sergiorgiraldo/svelte/commit/aaec72261680bd3b4f0921e2daa3a82d1c8eb376))
+* component binding: binding references, elements and components ([a152c0c](https://github.com/sergiorgiraldo/svelte/commit/a152c0c85ccfbcf32238802e88c8a95f5e294f8b))
+* component binding: dropdowns ([6bbe6c0](https://github.com/sergiorgiraldo/svelte/commit/6bbe6c06d3c1c8efcf106c95f5d9c1e476210c94))
+* component binding: radio and checkbox ([2449bbc](https://github.com/sergiorgiraldo/svelte/commit/2449bbc6b05582174286ca59b6ea4120b1ffb005))
+* form validation.. there is none builtin in svelte ([65b272c](https://github.com/sergiorgiraldo/svelte/commit/65b272ca0c0e5bb9a8081a6a87bac85b7dd00a79))
+* learning squash PR, this is aux branch ([e0c78dc](https://github.com/sergiorgiraldo/svelte/commit/e0c78dcbe83e10f56d51c1b9ebbb0551ba4d7204))
+* learning squash PR, this is aux branch ([#30](https://github.com/sergiorgiraldo/svelte/issues/30)) ([5c52d7a](https://github.com/sergiorgiraldo/svelte/commit/5c52d7ac6a96326e9c8e1471c1ef77f5ddfba3b7))
+* learning squash PR, this is dev branch ([341e2b3](https://github.com/sergiorgiraldo/svelte/commit/341e2b3c5901545b0a445fb6872c9f339f45fbc5))
+* learning squash PR, this is dev branch ([a56cff7](https://github.com/sergiorgiraldo/svelte/commit/a56cff743bca609dafa38e5de2544c0e069da9d0))
+* learning squash PR, this is dev branch ([#31](https://github.com/sergiorgiraldo/svelte/issues/31)) ([6f05acb](https://github.com/sergiorgiraldo/svelte/commit/6f05acb0d3449cd3c47d76e4c082a271f11a4efa))
+
 ## [2.1.0](https://github.com/sergiorgiraldo/svelte/compare/v2.0.0...v2.1.0) (2023-10-14)
 
 
