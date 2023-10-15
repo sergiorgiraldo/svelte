@@ -1,6 +1,7 @@
 <script>
 	import CustomInput from "./CustomInput.svelte";
 	import Toggle from "./Toggle.svelte";
+	import { isValidEmail } from "./validation.js";
 
 	let val = "SRG";
 	let price = 0;
@@ -11,15 +12,23 @@
 	let singleFavColor = "blue";
 	let usernameInput;
 	let someDiv;
-  let customInput;
+	let customInput;
+	let enteredEmail = "";
+	let formIsValid = false;
+
+	$: if (isValidEmail(enteredEmail)) {
+		formIsValid = true;
+	} else {
+		formIsValid = false;
+	}
 
 	$: console.log("val>>" + val);
-	$: console.log("selectedOption>>" +selectedOption);
-	$: console.log("proce>>" +price);
-	$: console.log("agreed>>" +agreed);
-	$: console.log("favColor>>" +favColor);
+	$: console.log("selectedOption>>" + selectedOption);
+	$: console.log("proce>>" + price);
+	$: console.log("agreed>>" + agreed);
+	$: console.log("favColor>>" + favColor);
 	$: console.log(favColorArr);
-	$: console.log("singleFavColor>>" +singleFavColor);
+	$: console.log("singleFavColor>>" + singleFavColor);
 	$: console.log(customInput);
 
 	function saveData() {
@@ -27,7 +36,7 @@
 		console.log(usernameInput);
 		console.dir(usernameInput);
 		console.dir(someDiv);
-    customInput.empty();
+		customInput.empty();
 	}
 
 	// function setValue(event) {
@@ -39,7 +48,7 @@
 
 <!-- <input type="text" value={val} on:input={setValue}> -->
 <!-- <input type="text" bind:value={val} /> -->
-<CustomInput bind:val bind:this={customInput}/>
+<CustomInput bind:val bind:this={customInput} />
 
 <Toggle bind:chosenOption={selectedOption} />
 
@@ -95,3 +104,18 @@
 <div bind:this={someDiv} />
 <button on:click={saveData}>Save</button>
 
+<hr />
+
+<form on:submit>
+	<input
+		type="email"
+		bind:value={enteredEmail}
+		class={isValidEmail(enteredEmail) ? "" : "invalid"} />
+	<button type="submit" disabled={!formIsValid}>Save</button>
+</form>
+
+<style>
+	.invalid {
+		border: 1px solid red;
+	}
+</style>
