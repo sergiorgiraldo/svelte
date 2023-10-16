@@ -3,7 +3,11 @@
 	import TextInput from "../UI/TextInput.svelte";
 	import Button from "../UI/Button.svelte";
 	import Modal from "../UI/Modal.svelte";
-	import { isEmpty, isValidEmail, isValidURI } from "../helpers/validation.js";
+	import {
+		isEmpty,
+		isValidEmail,
+		isValidURI
+	} from "../helpers/validation.js";
 
 	let title = "";
 	let titleValid = false;
@@ -26,6 +30,15 @@
 	$: descriptionValid = !isEmpty(description);
 	$: imageUrlValid = isValidURI(imageUrl);
 	$: emailValid = isValidEmail(email);
+	$: formIsValid =
+		titleValid &&
+		subtitleValid &&
+		addressValid &&
+		descriptionValid &&
+		imageUrlValid &&
+		emailValid;
+
+	let formIsValid = false;
 
 	function submitForm() {
 		dispatch("save", {
@@ -91,8 +104,12 @@
 			on:input={(event) => (description = event.target.value)} />
 	</form>
 	<div slot="footer">
-		<Button type="button" mode="outline" on:click={cancel}>Cancel</Button>
-		<Button type="button" on:click={submitForm}>Save</Button>
+		<Button type="button" mode="outline" on:click={cancel}>
+			Cancel
+		</Button>
+		<Button type="button" on:click={submitForm} disabled={!formIsValid}>
+			Save
+		</Button>
 	</div>
 </Modal>
 
