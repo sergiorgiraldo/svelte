@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.3.0](https://github.com/sergiorgiraldo/svelte/compare/v2.2.0...v2.3.0) (2023-10-16)
+
+
+### Features
+
+* prj02, all fields with validation ([0d7a0e2](https://github.com/sergiorgiraldo/svelte/commit/0d7a0e2530af7808fbff96bbf9812b1d24a0992b))
+* prj02, basic structure to validate fields ([17298ca](https://github.com/sergiorgiraldo/svelte/commit/17298caaeede67e617fe4565c46151a3e617b3df))
+* prj02, form using validation ([7e53c9d](https://github.com/sergiorgiraldo/svelte/commit/7e53c9d4cba95f901158ec6d5c0583550f5c4cf9))
+
 ## [2.2.0](https://github.com/sergiorgiraldo/svelte/compare/v2.1.0...v2.2.0) (2023-10-15)
 
 
