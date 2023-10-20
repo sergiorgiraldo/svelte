@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.4.0](https://github.com/sergiorgiraldo/svelte/compare/v2.3.0...v2.4.0) (2023-10-20)
+
+
+### Features
+
+* fifth module udemy, add products to the cart ([b3abba8](https://github.com/sergiorgiraldo/svelte/commit/b3abba896ef670b803f8568cc4da36bf0df1fb9f))
+* fifth module udemy, state management ([cb33dfb](https://github.com/sergiorgiraldo/svelte/commit/cb33dfb0c5a07f28673725a454e75a752bcf9485))
+* get the description from the store in the cart, uses a temp subscription ([b04f1b1](https://github.com/sergiorgiraldo/svelte/commit/b04f1b16e795fbb7dc2c03ebf377fe634a039c10))
+* lifecycle, always unsubscribe from the store ([5825d2d](https://github.com/sergiorgiraldo/svelte/commit/5825d2dce33e5781b57cbdacd2dda50ecb2b12b9))
+* shortcut to use a store, use $&lt;name-of-store&gt; ([1e74387](https://github.com/sergiorgiraldo/svelte/commit/1e743873998f65e4b41e1c4141d5e59410967a6e))
+
 ## [2.3.0](https://github.com/sergiorgiraldo/svelte/compare/v2.2.0...v2.3.0) (2023-10-16)
 
 
