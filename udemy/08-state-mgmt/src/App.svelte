@@ -8,7 +8,9 @@
 	let showCart = true;
 
 	const unsubscribe = timer.subscribe((count) => {
-		console.log("App" + count);
+		if (count <= 5 ) {
+			console.log("App" + count);
+		}
 	});
 
 	onDestroy(() => unsubscribe());

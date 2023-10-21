@@ -5,7 +5,7 @@
 	import { timer } from "../timer-store.js";
 
 	const unsubscribe = timer.subscribe((count) => {
-		console.log("Cart" + count);
+		if(count <= 5) console.log("Cart" + count);
 	});
 
 	onDestroy(() => unsubscribe());
