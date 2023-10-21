@@ -1,6 +1,14 @@
 <script>
+	import { onDestroy } from "svelte";
 	import cartItems from "./cart-store.js";
 	import CartItem from "./CartItem.svelte";
+	import { timer } from "../timer-store.js";
+
+	const unsubscribe = timer.subscribe((count) => {
+		if(count <= 5) console.log("Cart" + count);
+	});
+
+	onDestroy(() => unsubscribe());
 </script>
 
 <section>

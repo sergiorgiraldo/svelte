@@ -1,12 +1,23 @@
 <script>
-  import Cart from "./Cart/Cart.svelte";
-  import Products from "./Products/Products.svelte";
-  import Button from "./UI/Button.svelte";
+	import { onDestroy } from "svelte";
+	import Cart from "./Cart/Cart.svelte";
+	import Products from "./Products/Products.svelte";
+	import Button from "./UI/Button.svelte";
+	import { timer } from "./timer-store";
 
-  let showCart = true;
+	let showCart = true;
+
+	const unsubscribe = timer.subscribe((count) => {
+		if (count <= 5 ) {
+			console.log("App" + count);
+		}
+	});
+
+	onDestroy(() => unsubscribe());
 </script>
-<Button on:click={()=> showCart = !showCart}>Show cart</Button>
+
+<Button on:click={() => (showCart = !showCart)}>Show cart</Button>
 {#if showCart}
-<Cart />
+	<Cart />
 {/if}
 <Products />
