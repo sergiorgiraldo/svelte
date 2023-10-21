@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.0.0](https://github.com/sergiorgiraldo/svelte/compare/v2.4.0...v3.0.0) (2023-10-21)
+
+
+### ⚠ BREAKING CHANGES
+
+* project finished, using stores, components and validation
+
+### Features
+
+* custom stores, where methods to manipulate in the store are on it ([47e3c67](https://github.com/sergiorgiraldo/svelte/commit/47e3c6703821ecbf9536ad99623f4b8138edb2e1))
+* project finished, using stores, components and validation ([5a3e5cb](https://github.com/sergiorgiraldo/svelte/commit/5a3e5cb7c45654b89a157fc11f3984355f761236))
+* readable stores ([b969f5a](https://github.com/sergiorgiraldo/svelte/commit/b969f5a466079f98ffefc15cb41a080f636e1f9f))
+
 ## [2.4.0](https://github.com/sergiorgiraldo/svelte/compare/v2.3.0...v2.4.0) (2023-10-20)
 
 
