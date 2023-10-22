@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.1.0](https://github.com/sergiorgiraldo/svelte/compare/v3.0.0...v3.1.0) (2023-10-22)
+
+
+### Features
+
+* animate elemennts differently in and out, see paragraph ([0ad28d6](https://github.com/sergiorgiraldo/svelte/commit/0ad28d64170003f16d57bf250adfee46dd1e8b31))
+* animate elements in the page ([adeca24](https://github.com/sergiorgiraldo/svelte/commit/adeca2445d21a4528b559f5c2442c2c92987a571))
+* animate objetcs with spring ([c4e5d86](https://github.com/sergiorgiraldo/svelte/commit/c4e5d864bb1916b23e74fd0cc6c8b9077a0a5778))
+* animate objetcs with transitions ([e46ac93](https://github.com/sergiorgiraldo/svelte/commit/e46ac9316dfc6591593e821f90722c1600546cf1))
+* animate passive elements, see the first set of boxes, when you add a second ([2ad12ba](https://github.com/sergiorgiraldo/svelte/commit/2ad12ba15bb7d7a51932d2414cbb3ea258115fc1))
+* animate progress bars ([ff04719](https://github.com/sergiorgiraldo/svelte/commit/ff0471902397d5cf9bd4834d4b03cfbac2805d3e))
+
 ## [3.0.0](https://github.com/sergiorgiraldo/svelte/compare/v2.4.0...v3.0.0) (2023-10-21)
 
 
