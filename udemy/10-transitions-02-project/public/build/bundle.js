@@ -1374,32 +1374,81 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[9] = list[i];
+    	child_ctx[11] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[9] = list[i];
+    	child_ctx[11] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[9] = list[i];
+    	child_ctx[11] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_3(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[9] = list[i];
+    	child_ctx[11] = list[i];
     	return child_ctx;
     }
 
-    // (46:0) {#each boxes as box (box)}
+    // (51:0) {#if showParagraph}
+    function create_if_block(ctx) {
+    	let p;
+    	let p_transition;
+    	let current;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			p.textContent = "Can you see me?";
+    			add_location(p, file, 51, 2, 1133);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    			current = true;
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+
+    			add_render_callback(() => {
+    				if (!current) return;
+    				if (!p_transition) p_transition = create_bidirectional_transition(p, fly, { x: 300 }, true);
+    				p_transition.run(1);
+    			});
+
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			if (!p_transition) p_transition = create_bidirectional_transition(p, fly, { x: 300 }, false);
+    			p_transition.run(0);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    			if (detaching && p_transition) p_transition.end();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block.name,
+    		type: "if",
+    		source: "(51:0) {#if showParagraph}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (60:0) {#each boxes as box (box)}
     function create_each_block_3(key_1, ctx) {
     	let div;
-    	let t_value = /*box*/ ctx[9] + "";
+    	let t_value = /*box*/ ctx[11] + "";
     	let t;
     	let div_transition;
     	let current;
@@ -1413,7 +1462,7 @@ var app = (function () {
     			div = element("div");
     			t = text(t_value);
     			attr_dev(div, "class", "svelte-11ic9xk");
-    			add_location(div, file, 47, 1, 1196);
+    			add_location(div, file, 61, 1, 1405);
     			this.first = div;
     		},
     		m: function mount(target, anchor) {
@@ -1426,7 +1475,7 @@ var app = (function () {
     					div,
     					"click",
     					function () {
-    						if (is_function(/*discard*/ ctx[6].bind(this, /*box*/ ctx[9], 0))) /*discard*/ ctx[6].bind(this, /*box*/ ctx[9], 0).apply(this, arguments);
+    						if (is_function(/*discard*/ ctx[7].bind(this, /*box*/ ctx[11], 0))) /*discard*/ ctx[7].bind(this, /*box*/ ctx[11], 0).apply(this, arguments);
     					},
     					false,
     					false,
@@ -1439,7 +1488,7 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if ((!current || dirty & /*boxes*/ 2) && t_value !== (t_value = /*box*/ ctx[9] + "")) set_data_dev(t, t_value);
+    			if ((!current || dirty & /*boxes*/ 4) && t_value !== (t_value = /*box*/ ctx[11] + "")) set_data_dev(t, t_value);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -1469,17 +1518,17 @@ var app = (function () {
     		block,
     		id: create_each_block_3.name,
     		type: "each",
-    		source: "(46:0) {#each boxes as box (box)}",
+    		source: "(60:0) {#each boxes as box (box)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (55:0) {#each boxes1 as box (box)}
+    // (69:0) {#each boxes1 as box (box)}
     function create_each_block_2(key_1, ctx) {
     	let div;
-    	let t_value = /*box*/ ctx[9] + "";
+    	let t_value = /*box*/ ctx[11] + "";
     	let t;
     	let div_transition;
     	let current;
@@ -1493,7 +1542,7 @@ var app = (function () {
     			div = element("div");
     			t = text(t_value);
     			attr_dev(div, "class", "d1 svelte-11ic9xk");
-    			add_location(div, file, 56, 1, 1394);
+    			add_location(div, file, 70, 1, 1603);
     			this.first = div;
     		},
     		m: function mount(target, anchor) {
@@ -1506,7 +1555,7 @@ var app = (function () {
     					div,
     					"click",
     					function () {
-    						if (is_function(/*discard*/ ctx[6].bind(this, /*box*/ ctx[9], 1))) /*discard*/ ctx[6].bind(this, /*box*/ ctx[9], 1).apply(this, arguments);
+    						if (is_function(/*discard*/ ctx[7].bind(this, /*box*/ ctx[11], 1))) /*discard*/ ctx[7].bind(this, /*box*/ ctx[11], 1).apply(this, arguments);
     					},
     					false,
     					false,
@@ -1519,7 +1568,7 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if ((!current || dirty & /*boxes1*/ 4) && t_value !== (t_value = /*box*/ ctx[9] + "")) set_data_dev(t, t_value);
+    			if ((!current || dirty & /*boxes1*/ 8) && t_value !== (t_value = /*box*/ ctx[11] + "")) set_data_dev(t, t_value);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -1549,17 +1598,17 @@ var app = (function () {
     		block,
     		id: create_each_block_2.name,
     		type: "each",
-    		source: "(55:0) {#each boxes1 as box (box)}",
+    		source: "(69:0) {#each boxes1 as box (box)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (64:0) {#each boxes2 as box (box)}
+    // (78:0) {#each boxes2 as box (box)}
     function create_each_block_1(key_1, ctx) {
     	let div;
-    	let t_value = /*box*/ ctx[9] + "";
+    	let t_value = /*box*/ ctx[11] + "";
     	let t;
     	let div_transition;
     	let current;
@@ -1573,7 +1622,7 @@ var app = (function () {
     			div = element("div");
     			t = text(t_value);
     			attr_dev(div, "class", "d2 svelte-11ic9xk");
-    			add_location(div, file, 65, 1, 1604);
+    			add_location(div, file, 79, 1, 1813);
     			this.first = div;
     		},
     		m: function mount(target, anchor) {
@@ -1586,7 +1635,7 @@ var app = (function () {
     					div,
     					"click",
     					function () {
-    						if (is_function(/*discard*/ ctx[6].bind(this, /*box*/ ctx[9], 2))) /*discard*/ ctx[6].bind(this, /*box*/ ctx[9], 2).apply(this, arguments);
+    						if (is_function(/*discard*/ ctx[7].bind(this, /*box*/ ctx[11], 2))) /*discard*/ ctx[7].bind(this, /*box*/ ctx[11], 2).apply(this, arguments);
     					},
     					false,
     					false,
@@ -1599,7 +1648,7 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if ((!current || dirty & /*boxes2*/ 8) && t_value !== (t_value = /*box*/ ctx[9] + "")) set_data_dev(t, t_value);
+    			if ((!current || dirty & /*boxes2*/ 16) && t_value !== (t_value = /*box*/ ctx[11] + "")) set_data_dev(t, t_value);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -1629,17 +1678,17 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(64:0) {#each boxes2 as box (box)}",
+    		source: "(78:0) {#each boxes2 as box (box)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (73:0) {#each boxes3 as box (box)}
+    // (87:0) {#each boxes3 as box (box)}
     function create_each_block(key_1, ctx) {
     	let div;
-    	let t0_value = /*box*/ ctx[9] + "";
+    	let t0_value = /*box*/ ctx[11] + "";
     	let t0;
     	let t1;
     	let div_transition;
@@ -1655,7 +1704,7 @@ var app = (function () {
     			t0 = text(t0_value);
     			t1 = space();
     			attr_dev(div, "class", "d3 svelte-11ic9xk");
-    			add_location(div, file, 74, 1, 1815);
+    			add_location(div, file, 88, 1, 2024);
     			this.first = div;
     		},
     		m: function mount(target, anchor) {
@@ -1669,7 +1718,7 @@ var app = (function () {
     					div,
     					"click",
     					function () {
-    						if (is_function(/*discard*/ ctx[6].bind(this, /*box*/ ctx[9], 3))) /*discard*/ ctx[6].bind(this, /*box*/ ctx[9], 3).apply(this, arguments);
+    						if (is_function(/*discard*/ ctx[7].bind(this, /*box*/ ctx[11], 3))) /*discard*/ ctx[7].bind(this, /*box*/ ctx[11], 3).apply(this, arguments);
     					},
     					false,
     					false,
@@ -1682,7 +1731,7 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if ((!current || dirty & /*boxes3*/ 16) && t0_value !== (t0_value = /*box*/ ctx[9] + "")) set_data_dev(t0, t0_value);
+    			if ((!current || dirty & /*boxes3*/ 32) && t0_value !== (t0_value = /*box*/ ctx[11] + "")) set_data_dev(t0, t0_value);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -1712,7 +1761,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(73:0) {#each boxes3 as box (box)}",
+    		source: "(87:0) {#each boxes3 as box (box)}",
     		ctx
     	});
 
@@ -1720,36 +1769,42 @@ var app = (function () {
     }
 
     function create_fragment(ctx) {
-    	let input;
-    	let t0;
-    	let button;
+    	let button0;
+    	let t1;
     	let t2;
-    	let i;
+    	let hr0;
+    	let t3;
+    	let input;
     	let t4;
+    	let button1;
+    	let t6;
+    	let i;
+    	let t8;
     	let each_blocks_3 = [];
     	let each0_lookup = new Map();
-    	let t5;
-    	let hr0;
-    	let t6;
+    	let t9;
+    	let hr1;
+    	let t10;
     	let each_blocks_2 = [];
     	let each1_lookup = new Map();
-    	let t7;
-    	let hr1;
-    	let t8;
+    	let t11;
+    	let hr2;
+    	let t12;
     	let each_blocks_1 = [];
     	let each2_lookup = new Map();
-    	let t9;
-    	let hr2;
-    	let t10;
+    	let t13;
+    	let hr3;
+    	let t14;
     	let each_blocks = [];
     	let each3_lookup = new Map();
     	let each3_anchor;
     	let current;
     	let mounted;
     	let dispose;
-    	let each_value_3 = /*boxes*/ ctx[1];
+    	let if_block = /*showParagraph*/ ctx[1] && create_if_block(ctx);
+    	let each_value_3 = /*boxes*/ ctx[2];
     	validate_each_argument(each_value_3);
-    	const get_key = ctx => /*box*/ ctx[9];
+    	const get_key = ctx => /*box*/ ctx[11];
     	validate_each_keys(ctx, each_value_3, get_each_context_3, get_key);
 
     	for (let i = 0; i < each_value_3.length; i += 1) {
@@ -1758,9 +1813,9 @@ var app = (function () {
     		each0_lookup.set(key, each_blocks_3[i] = create_each_block_3(key, child_ctx));
     	}
 
-    	let each_value_2 = /*boxes1*/ ctx[2];
+    	let each_value_2 = /*boxes1*/ ctx[3];
     	validate_each_argument(each_value_2);
-    	const get_key_1 = ctx => /*box*/ ctx[9];
+    	const get_key_1 = ctx => /*box*/ ctx[11];
     	validate_each_keys(ctx, each_value_2, get_each_context_2, get_key_1);
 
     	for (let i = 0; i < each_value_2.length; i += 1) {
@@ -1769,9 +1824,9 @@ var app = (function () {
     		each1_lookup.set(key, each_blocks_2[i] = create_each_block_2(key, child_ctx));
     	}
 
-    	let each_value_1 = /*boxes2*/ ctx[3];
+    	let each_value_1 = /*boxes2*/ ctx[4];
     	validate_each_argument(each_value_1);
-    	const get_key_2 = ctx => /*box*/ ctx[9];
+    	const get_key_2 = ctx => /*box*/ ctx[11];
     	validate_each_keys(ctx, each_value_1, get_each_context_1, get_key_2);
 
     	for (let i = 0; i < each_value_1.length; i += 1) {
@@ -1780,9 +1835,9 @@ var app = (function () {
     		each2_lookup.set(key, each_blocks_1[i] = create_each_block_1(key, child_ctx));
     	}
 
-    	let each_value = /*boxes3*/ ctx[4];
+    	let each_value = /*boxes3*/ ctx[5];
     	validate_each_argument(each_value);
-    	const get_key_3 = ctx => /*box*/ ctx[9];
+    	const get_key_3 = ctx => /*box*/ ctx[11];
     	validate_each_keys(ctx, each_value, get_each_context, get_key_3);
 
     	for (let i = 0; i < each_value.length; i += 1) {
@@ -1793,66 +1848,82 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			input = element("input");
-    			t0 = space();
-    			button = element("button");
-    			button.textContent = "Add";
+    			button0 = element("button");
+    			button0.textContent = "Toggle";
+    			t1 = space();
+    			if (if_block) if_block.c();
     			t2 = space();
+    			hr0 = element("hr");
+    			t3 = space();
+    			input = element("input");
+    			t4 = space();
+    			button1 = element("button");
+    			button1.textContent = "Add";
+    			t6 = space();
     			i = element("i");
     			i.textContent = "click in box to get rid of it";
-    			t4 = space();
+    			t8 = space();
 
     			for (let i = 0; i < each_blocks_3.length; i += 1) {
     				each_blocks_3[i].c();
     			}
 
-    			t5 = space();
-    			hr0 = element("hr");
-    			t6 = space();
+    			t9 = space();
+    			hr1 = element("hr");
+    			t10 = space();
 
     			for (let i = 0; i < each_blocks_2.length; i += 1) {
     				each_blocks_2[i].c();
     			}
 
-    			t7 = space();
-    			hr1 = element("hr");
-    			t8 = space();
+    			t11 = space();
+    			hr2 = element("hr");
+    			t12 = space();
 
     			for (let i = 0; i < each_blocks_1.length; i += 1) {
     				each_blocks_1[i].c();
     			}
 
-    			t9 = space();
-    			hr2 = element("hr");
-    			t10 = space();
+    			t13 = space();
+    			hr3 = element("hr");
+    			t14 = space();
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
     			each3_anchor = empty();
-    			attr_dev(input, "type", "text");
-    			add_location(input, file, 42, 0, 990);
-    			add_location(button, file, 43, 0, 1033);
-    			add_location(i, file, 43, 39, 1072);
+    			add_location(button0, file, 43, 0, 1021);
     			attr_dev(hr0, "class", "svelte-11ic9xk");
-    			add_location(hr0, file, 52, 0, 1299);
+    			add_location(hr0, file, 54, 0, 1191);
+    			attr_dev(input, "type", "text");
+    			add_location(input, file, 56, 0, 1199);
+    			add_location(button1, file, 57, 0, 1242);
+    			add_location(i, file, 57, 39, 1281);
     			attr_dev(hr1, "class", "svelte-11ic9xk");
-    			add_location(hr1, file, 61, 0, 1509);
+    			add_location(hr1, file, 66, 0, 1508);
     			attr_dev(hr2, "class", "svelte-11ic9xk");
-    			add_location(hr2, file, 70, 0, 1720);
+    			add_location(hr2, file, 75, 0, 1718);
+    			attr_dev(hr3, "class", "svelte-11ic9xk");
+    			add_location(hr3, file, 84, 0, 1929);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, input, anchor);
-    			/*input_binding*/ ctx[7](input);
-    			insert_dev(target, t0, anchor);
-    			insert_dev(target, button, anchor);
+    			insert_dev(target, button0, anchor);
+    			insert_dev(target, t1, anchor);
+    			if (if_block) if_block.m(target, anchor);
     			insert_dev(target, t2, anchor);
-    			insert_dev(target, i, anchor);
+    			insert_dev(target, hr0, anchor);
+    			insert_dev(target, t3, anchor);
+    			insert_dev(target, input, anchor);
+    			/*input_binding*/ ctx[9](input);
     			insert_dev(target, t4, anchor);
+    			insert_dev(target, button1, anchor);
+    			insert_dev(target, t6, anchor);
+    			insert_dev(target, i, anchor);
+    			insert_dev(target, t8, anchor);
 
     			for (let i = 0; i < each_blocks_3.length; i += 1) {
     				if (each_blocks_3[i]) {
@@ -1860,9 +1931,9 @@ var app = (function () {
     				}
     			}
 
-    			insert_dev(target, t5, anchor);
-    			insert_dev(target, hr0, anchor);
-    			insert_dev(target, t6, anchor);
+    			insert_dev(target, t9, anchor);
+    			insert_dev(target, hr1, anchor);
+    			insert_dev(target, t10, anchor);
 
     			for (let i = 0; i < each_blocks_2.length; i += 1) {
     				if (each_blocks_2[i]) {
@@ -1870,9 +1941,9 @@ var app = (function () {
     				}
     			}
 
-    			insert_dev(target, t7, anchor);
-    			insert_dev(target, hr1, anchor);
-    			insert_dev(target, t8, anchor);
+    			insert_dev(target, t11, anchor);
+    			insert_dev(target, hr2, anchor);
+    			insert_dev(target, t12, anchor);
 
     			for (let i = 0; i < each_blocks_1.length; i += 1) {
     				if (each_blocks_1[i]) {
@@ -1880,9 +1951,9 @@ var app = (function () {
     				}
     			}
 
-    			insert_dev(target, t9, anchor);
-    			insert_dev(target, hr2, anchor);
-    			insert_dev(target, t10, anchor);
+    			insert_dev(target, t13, anchor);
+    			insert_dev(target, hr3, anchor);
+    			insert_dev(target, t14, anchor);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				if (each_blocks[i]) {
@@ -1894,40 +1965,65 @@ var app = (function () {
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen_dev(button, "click", /*addBox*/ ctx[5], false, false, false, false);
+    				dispose = [
+    					listen_dev(button0, "click", /*click_handler*/ ctx[8], false, false, false, false),
+    					listen_dev(button1, "click", /*addBox*/ ctx[6], false, false, false, false)
+    				];
+
     				mounted = true;
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*discard, boxes*/ 66) {
-    				each_value_3 = /*boxes*/ ctx[1];
+    			if (/*showParagraph*/ ctx[1]) {
+    				if (if_block) {
+    					if (dirty & /*showParagraph*/ 2) {
+    						transition_in(if_block, 1);
+    					}
+    				} else {
+    					if_block = create_if_block(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(t2.parentNode, t2);
+    				}
+    			} else if (if_block) {
+    				group_outros();
+
+    				transition_out(if_block, 1, 1, () => {
+    					if_block = null;
+    				});
+
+    				check_outros();
+    			}
+
+    			if (dirty & /*discard, boxes*/ 132) {
+    				each_value_3 = /*boxes*/ ctx[2];
     				validate_each_argument(each_value_3);
     				group_outros();
     				validate_each_keys(ctx, each_value_3, get_each_context_3, get_key);
-    				each_blocks_3 = update_keyed_each(each_blocks_3, dirty, get_key, 1, ctx, each_value_3, each0_lookup, t5.parentNode, outro_and_destroy_block, create_each_block_3, t5, get_each_context_3);
+    				each_blocks_3 = update_keyed_each(each_blocks_3, dirty, get_key, 1, ctx, each_value_3, each0_lookup, t9.parentNode, outro_and_destroy_block, create_each_block_3, t9, get_each_context_3);
     				check_outros();
     			}
 
-    			if (dirty & /*discard, boxes1*/ 68) {
-    				each_value_2 = /*boxes1*/ ctx[2];
+    			if (dirty & /*discard, boxes1*/ 136) {
+    				each_value_2 = /*boxes1*/ ctx[3];
     				validate_each_argument(each_value_2);
     				group_outros();
     				validate_each_keys(ctx, each_value_2, get_each_context_2, get_key_1);
-    				each_blocks_2 = update_keyed_each(each_blocks_2, dirty, get_key_1, 1, ctx, each_value_2, each1_lookup, t7.parentNode, outro_and_destroy_block, create_each_block_2, t7, get_each_context_2);
+    				each_blocks_2 = update_keyed_each(each_blocks_2, dirty, get_key_1, 1, ctx, each_value_2, each1_lookup, t11.parentNode, outro_and_destroy_block, create_each_block_2, t11, get_each_context_2);
     				check_outros();
     			}
 
-    			if (dirty & /*discard, boxes2*/ 72) {
-    				each_value_1 = /*boxes2*/ ctx[3];
+    			if (dirty & /*discard, boxes2*/ 144) {
+    				each_value_1 = /*boxes2*/ ctx[4];
     				validate_each_argument(each_value_1);
     				group_outros();
     				validate_each_keys(ctx, each_value_1, get_each_context_1, get_key_2);
-    				each_blocks_1 = update_keyed_each(each_blocks_1, dirty, get_key_2, 1, ctx, each_value_1, each2_lookup, t9.parentNode, outro_and_destroy_block, create_each_block_1, t9, get_each_context_1);
+    				each_blocks_1 = update_keyed_each(each_blocks_1, dirty, get_key_2, 1, ctx, each_value_1, each2_lookup, t13.parentNode, outro_and_destroy_block, create_each_block_1, t13, get_each_context_1);
     				check_outros();
     			}
 
-    			if (dirty & /*discard, boxes3*/ 80) {
-    				each_value = /*boxes3*/ ctx[4];
+    			if (dirty & /*discard, boxes3*/ 160) {
+    				each_value = /*boxes3*/ ctx[5];
     				validate_each_argument(each_value);
     				group_outros();
     				validate_each_keys(ctx, each_value, get_each_context, get_key_3);
@@ -1937,6 +2033,7 @@ var app = (function () {
     		},
     		i: function intro(local) {
     			if (current) return;
+    			transition_in(if_block);
 
     			for (let i = 0; i < each_value_3.length; i += 1) {
     				transition_in(each_blocks_3[i]);
@@ -1957,6 +2054,8 @@ var app = (function () {
     			current = true;
     		},
     		o: function outro(local) {
+    			transition_out(if_block);
+
     			for (let i = 0; i < each_blocks_3.length; i += 1) {
     				transition_out(each_blocks_3[i]);
     			}
@@ -1976,37 +2075,43 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(input);
-    			/*input_binding*/ ctx[7](null);
-    			if (detaching) detach_dev(t0);
-    			if (detaching) detach_dev(button);
+    			if (detaching) detach_dev(button0);
+    			if (detaching) detach_dev(t1);
+    			if (if_block) if_block.d(detaching);
     			if (detaching) detach_dev(t2);
-    			if (detaching) detach_dev(i);
+    			if (detaching) detach_dev(hr0);
+    			if (detaching) detach_dev(t3);
+    			if (detaching) detach_dev(input);
+    			/*input_binding*/ ctx[9](null);
     			if (detaching) detach_dev(t4);
+    			if (detaching) detach_dev(button1);
+    			if (detaching) detach_dev(t6);
+    			if (detaching) detach_dev(i);
+    			if (detaching) detach_dev(t8);
 
     			for (let i = 0; i < each_blocks_3.length; i += 1) {
     				each_blocks_3[i].d(detaching);
     			}
 
-    			if (detaching) detach_dev(t5);
-    			if (detaching) detach_dev(hr0);
-    			if (detaching) detach_dev(t6);
+    			if (detaching) detach_dev(t9);
+    			if (detaching) detach_dev(hr1);
+    			if (detaching) detach_dev(t10);
 
     			for (let i = 0; i < each_blocks_2.length; i += 1) {
     				each_blocks_2[i].d(detaching);
     			}
 
-    			if (detaching) detach_dev(t7);
-    			if (detaching) detach_dev(hr1);
-    			if (detaching) detach_dev(t8);
+    			if (detaching) detach_dev(t11);
+    			if (detaching) detach_dev(hr2);
+    			if (detaching) detach_dev(t12);
 
     			for (let i = 0; i < each_blocks_1.length; i += 1) {
     				each_blocks_1[i].d(detaching);
     			}
 
-    			if (detaching) detach_dev(t9);
-    			if (detaching) detach_dev(hr2);
-    			if (detaching) detach_dev(t10);
+    			if (detaching) detach_dev(t13);
+    			if (detaching) detach_dev(hr3);
+    			if (detaching) detach_dev(t14);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].d(detaching);
@@ -2014,7 +2119,7 @@ var app = (function () {
 
     			if (detaching) detach_dev(each3_anchor);
     			mounted = false;
-    			dispose();
+    			run_all(dispose);
     		}
     	};
 
@@ -2033,6 +2138,7 @@ var app = (function () {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('App', slots, []);
     	let boxInput;
+    	let showParagraph = false;
     	const progress = tweened(0, { delay: 0, duration: 700, easing: cubicIn });
 
     	setTimeout(
@@ -2048,17 +2154,17 @@ var app = (function () {
     	let boxes3 = [];
 
     	function addBox() {
-    		$$invalidate(1, boxes = [...boxes, boxInput.value]);
-    		$$invalidate(2, boxes1 = [...boxes1, boxInput.value]);
-    		$$invalidate(3, boxes2 = [...boxes2, boxInput.value]);
-    		$$invalidate(4, boxes3 = [...boxes3, boxInput.value]);
+    		$$invalidate(2, boxes = [...boxes, boxInput.value]);
+    		$$invalidate(3, boxes1 = [...boxes1, boxInput.value]);
+    		$$invalidate(4, boxes2 = [...boxes2, boxInput.value]);
+    		$$invalidate(5, boxes3 = [...boxes3, boxInput.value]);
     	}
 
     	function discard(value, what) {
-    		if (what === 0) $$invalidate(1, boxes = boxes.filter(el => el !== value));
-    		if (what === 1) $$invalidate(2, boxes1 = boxes1.filter(el => el !== value));
-    		if (what === 2) $$invalidate(3, boxes2 = boxes2.filter(el => el !== value));
-    		if (what === 3) $$invalidate(4, boxes3 = boxes3.filter(el => el !== value));
+    		if (what === 0) $$invalidate(2, boxes = boxes.filter(el => el !== value));
+    		if (what === 1) $$invalidate(3, boxes1 = boxes1.filter(el => el !== value));
+    		if (what === 2) $$invalidate(4, boxes2 = boxes2.filter(el => el !== value));
+    		if (what === 3) $$invalidate(5, boxes3 = boxes3.filter(el => el !== value));
     	}
 
     	const writable_props = [];
@@ -2066,6 +2172,10 @@ var app = (function () {
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<App> was created with unknown prop '${key}'`);
     	});
+
+    	const click_handler = () => {
+    		$$invalidate(1, showParagraph = !showParagraph);
+    	};
 
     	function input_binding($$value) {
     		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
@@ -2083,6 +2193,7 @@ var app = (function () {
     		scale,
     		Spring,
     		boxInput,
+    		showParagraph,
     		progress,
     		boxes,
     		boxes1,
@@ -2094,17 +2205,29 @@ var app = (function () {
 
     	$$self.$inject_state = $$props => {
     		if ('boxInput' in $$props) $$invalidate(0, boxInput = $$props.boxInput);
-    		if ('boxes' in $$props) $$invalidate(1, boxes = $$props.boxes);
-    		if ('boxes1' in $$props) $$invalidate(2, boxes1 = $$props.boxes1);
-    		if ('boxes2' in $$props) $$invalidate(3, boxes2 = $$props.boxes2);
-    		if ('boxes3' in $$props) $$invalidate(4, boxes3 = $$props.boxes3);
+    		if ('showParagraph' in $$props) $$invalidate(1, showParagraph = $$props.showParagraph);
+    		if ('boxes' in $$props) $$invalidate(2, boxes = $$props.boxes);
+    		if ('boxes1' in $$props) $$invalidate(3, boxes1 = $$props.boxes1);
+    		if ('boxes2' in $$props) $$invalidate(4, boxes2 = $$props.boxes2);
+    		if ('boxes3' in $$props) $$invalidate(5, boxes3 = $$props.boxes3);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [boxInput, boxes, boxes1, boxes2, boxes3, addBox, discard, input_binding];
+    	return [
+    		boxInput,
+    		showParagraph,
+    		boxes,
+    		boxes1,
+    		boxes2,
+    		boxes3,
+    		addBox,
+    		discard,
+    		click_handler,
+    		input_binding
+    	];
     }
 
     class App extends SvelteComponentDev {

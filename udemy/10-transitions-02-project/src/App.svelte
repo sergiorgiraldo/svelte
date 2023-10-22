@@ -6,6 +6,7 @@
 	import Spring from "./Spring.svelte";
 
 	let boxInput;
+    let showParagraph = false;
 
 	const progress = tweened(0, {
 		delay: 0,
@@ -39,6 +40,19 @@
 
 <!-- <progress value={$progress} /> -->
 <!-- <Spring /> -->
+
+<button
+  on:click={() => {
+    showParagraph = !showParagraph;
+  }}>
+  Toggle
+</button>
+
+{#if showParagraph}
+  <p transition:fly={{ x: 300 }}>Can you see me?</p>
+{/if}
+
+<hr />
 
 <input type="text" bind:this={boxInput} />
 <button on:click={addBox}>Add</button> <i>click in box to get rid of it</i>
