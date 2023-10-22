@@ -6,7 +6,7 @@
 	import Spring from "./Spring.svelte";
 
 	let boxInput;
-    let showParagraph = false;
+	let showParagraph = false;
 
 	const progress = tweened(0, {
 		delay: 0,
@@ -31,10 +31,10 @@
 	}
 
 	function discard(value, what) {
-        if (what === 0) boxes = boxes.filter((el) => el !== value);
-        if (what === 1) boxes1 = boxes1.filter((el) => el !== value);
-        if (what === 2) boxes2 = boxes2.filter((el) => el !== value);
-        if (what === 3) boxes3 = boxes3.filter((el) => el !== value);
+		if (what === 0) boxes = boxes.filter((el) => el !== value);
+		if (what === 1) boxes1 = boxes1.filter((el) => el !== value);
+		if (what === 2) boxes2 = boxes2.filter((el) => el !== value);
+		if (what === 3) boxes3 = boxes3.filter((el) => el !== value);
 	}
 </script>
 
@@ -42,14 +42,14 @@
 <!-- <Spring /> -->
 
 <button
-  on:click={() => {
-    showParagraph = !showParagraph;
-  }}>
-  Toggle
+	on:click={() => {
+		showParagraph = !showParagraph;
+	}}>
+	Toggle
 </button>
 
 {#if showParagraph}
-  <p transition:fly={{ x: 300 }}>Can you see me?</p>
+	<p in:fade out:fly={{ x: 300 }}>Can you see me?</p>
 {/if}
 
 <hr />
@@ -59,7 +59,13 @@
 
 {#each boxes as box (box)}
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
-	<div transition:fly={{ x: 200, y: 0 }} on:click={discard.bind(this, box, 0)}>
+	<div
+		transition:fly={{ x: 200, y: 0 }}
+		on:click={discard.bind(this, box, 0)}
+		on:introstart={() => console.log("Adding the element starts")}
+		on:introend={() => console.log("Adding the element ends")}
+		on:outrostart={() => console.log("Removing the element starts")}
+		on:outroend={() => console.log("Removing the element ends")}>
 		{box}
 	</div>
 {/each}
@@ -68,7 +74,10 @@
 
 {#each boxes1 as box (box)}
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
-	<div class="d1" transition:fade={{ x: 200, y: 0 }} on:click={discard.bind(this, box, 1)}>
+	<div
+		class="d1"
+		transition:fade={{ x: 200, y: 0 }}
+		on:click={discard.bind(this, box, 1)}>
 		{box}
 	</div>
 {/each}
@@ -77,7 +86,10 @@
 
 {#each boxes2 as box (box)}
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
-	<div class="d2" transition:slide={{ x: 200, y: 0 }} on:click={discard.bind(this, box, 2)}>
+	<div
+		class="d2"
+		transition:slide={{ x: 200, y: 0 }}
+		on:click={discard.bind(this, box, 2)}>
 		{box}
 	</div>
 {/each}
@@ -86,15 +98,18 @@
 
 {#each boxes3 as box (box)}
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
-	<div class="d3" transition:scale={{ x: 200, y: 0 }} on:click={discard.bind(this, box, 3)}>
+	<div
+		class="d3"
+		transition:scale={{ x: 200, y: 0 }}
+		on:click={discard.bind(this, box, 3)}>
 		{box}
 	</div>
 {/each}
 
 <style>
-    hr {
-        border: 3px solid cyan;
-    }
+	hr {
+		border: 3px solid cyan;
+	}
 	div {
 		width: 5rem;
 		height: 5rem;
@@ -104,7 +119,7 @@
 		border-radius: 5px;
 		padding: 1rem;
 	}
-    div.d1 {
+	div.d1 {
 		width: 5rem;
 		height: 5rem;
 		background: greenyellow;
@@ -113,7 +128,7 @@
 		border-radius: 5px;
 		padding: 1rem;
 	}
-    div.d2 {
+	div.d2 {
 		width: 5rem;
 		height: 5rem;
 		background: paleturquoise;
@@ -122,7 +137,7 @@
 		border-radius: 5px;
 		padding: 1rem;
 	}
-    div.d3 {
+	div.d3 {
 		width: 5rem;
 		height: 5rem;
 		background: yellow;
