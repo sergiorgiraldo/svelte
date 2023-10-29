@@ -1,5 +1,27 @@
 # Changelog
 
+## [4.0.0](https://github.com/sergiorgiraldo/svelte/compare/v3.1.0...v4.0.0) (2023-10-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* error handling; project finished
+
+### Features
+
+* add a loading spinner ([dfc0d1b](https://github.com/sergiorgiraldo/svelte/commit/dfc0d1b43f49454ccac615923de13a4d7a9cf2c4))
+* delete meetup;favoritify meetup ([4023148](https://github.com/sergiorgiraldo/svelte/commit/4023148aed8edbd5379906ba6a5d92bc3c2eeafe))
+* error handling; project finished ([3b0383f](https://github.com/sergiorgiraldo/svelte/commit/3b0383f997995a95b351fe2c89eb5fab87e93a59))
+* finished transitions project ([f1b5608](https://github.com/sergiorgiraldo/svelte/commit/f1b56083021a3359cbe2690c6bed6e39a4cd7480))
+* initial projects using rest api's ([e460dbe](https://github.com/sergiorgiraldo/svelte/commit/e460dbefb419ca5249fe9ca0e23ec79e2937ceda))
+* loading meetups from firebase ([83c0739](https://github.com/sergiorgiraldo/svelte/commit/83c07392d76fa228391affa25f9c97b1ecb3a312))
+* saving meetups in firebase ([2025855](https://github.com/sergiorgiraldo/svelte/commit/2025855772fe998e1a942d2746f514dd655873dc))
+* update meetup ([17c7680](https://github.com/sergiorgiraldo/svelte/commit/17c7680c3274c08eb0b3584ad7961134e6d9d3fe))
+* using fetch and storing in a Store ([ce26947](https://github.com/sergiorgiraldo/svelte/commit/ce26947ffacf95311c9b8c904c59d163871c0a31))
+* using fetch and storing in a Store ([6a747d0](https://github.com/sergiorgiraldo/svelte/commit/6a747d03b7df64c486bdb43254081913b27c578b))
+* using fetch to add and fetch data; firebase realtimedatabase api ([a413429](https://github.com/sergiorgiraldo/svelte/commit/a413429cbf790c575cdaf3cd47dec296f89ee84b))
+* using fetch to fetch data: syntatic sugar for onMount ([434a6b3](https://github.com/sergiorgiraldo/svelte/commit/434a6b3602091faa0b2805da3b7357c80586a4c4))
+
 ## [3.1.0](https://github.com/sergiorgiraldo/svelte/compare/v3.0.0...v3.1.0) (2023-10-22)
 
 
