@@ -55,16 +55,12 @@
 			address: address
 		};
 
-		//using PATCH instead of PUT. PUT update all fields, PATCH update only what is supplied
 		if (id) {
-			fetch(
-				`https://svelte-001-411ee-default-rtdb.europe-west1.firebasedatabase.app/meetups/${id}.json`,
-				{
-					method: "PATCH",
-					body: JSON.stringify(meetupData),
-					headers: { "Content-Type": "application/json" }
-				}
-			)
+			fetch(`https://svelte-001-411ee-default-rtdb.europe-west1.firebasedatabase.app/meetups/${id}.json`, {
+				method: "PATCH",
+				body: JSON.stringify(meetupData),
+				headers: { "Content-Type": "application/json" }
+			})
 				.then((res) => {
 					if (!res.ok) {
 						throw new Error("An error occurred, please try again!");
@@ -75,14 +71,11 @@
 					console.log(err);
 				});
 		} else {
-			fetch(
-				"https://svelte-001-411ee-default-rtdb.europe-west1.firebasedatabase.app/meetups.json",
-				{
-					method: "POST",
-					body: JSON.stringify({ ...meetupData, isFavorite: false }),
-					headers: { "Content-Type": "application/json" }
-				}
-			)
+			fetch("https://svelte-001-411ee-default-rtdb.europe-west1.firebasedatabase.app/meetups.json", {
+				method: "POST",
+				body: JSON.stringify({ ...meetupData, isFavorite: false }),
+				headers: { "Content-Type": "application/json" }
+			})
 				.then((res) => {
 					if (!res.ok) {
 						throw new Error("An error occurred, please try again!");
@@ -104,7 +97,16 @@
 	}
 
 	function deleteMeetup() {
-		meetups.removeMeetup(id);
+		fetch(`https://svelte-001-411ee-default-rtdb.europe-west1.firebasedatabase.app/meetups/${id}.json`, {
+			method: "DELETE"
+		})
+			.then((res) => {
+				if (!res.ok) {
+					throw new Error("An error occurred, please try again!");
+				}
+				meetups.removeMeetup(id);
+			})
+			.catch((err) => console.log(err));
 		dispatch("save");
 	}
 
