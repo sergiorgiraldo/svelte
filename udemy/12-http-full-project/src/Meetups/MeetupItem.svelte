@@ -11,20 +11,28 @@
 	export let description;
 	export let address;
 	export let isFav;
+	export let email;
+	
+	let isLoading = false;
 
 	const dispatch = createEventDispatcher();
 
 	function toggleFavorite() {
-		fetch(`https://svelte-001-411ee-default-rtdb.europe-west1.firebasedatabase.app/meetups/${id}.json`, {
-			method: "PATCH",
-			body: JSON.stringify({ isFavorite: !isFav }),
-			headers: { "Content-Type": "application/json" }
-		})
+		isLoading = true;
+		fetch(
+			`https://svelte-001-411ee-default-rtdb.europe-west1.firebasedatabase.app/meetups/${id}.json`,
+			{
+				method: "PATCH",
+				body: JSON.stringify({ isFavorite: !isFav }),
+				headers: { "Content-Type": "application/json" }
+			}
+		)
 			.then((res) => {
 				if (!res.ok) {
 					throw new Error("An error occurred, please try again!");
 				}
 				meetups.toggleFavorite(id);
+				isLoading = false;
 			})
 			.catch((err) => console.log(err));
 	}
@@ -54,13 +62,17 @@
 			on:click={() => dispatch("edit", id)}>
 			Edit
 		</Button>
-		<Button
-			mode="outline"
-			color={isFav ? null : "success"}
-			type="button"
-			on:click={toggleFavorite}>
-			{isFav ? "Unfavorite" : "Favorite"}
-		</Button>
+		{#if isLoading}
+			<span>Changing...</span>
+		{:else}
+			<Button
+				mode="outline"
+				color={isFav ? null : "success"}
+				type="button"
+				on:click={toggleFavorite}>
+				{isFav ? "Unfavorite" : "Favorite"}
+			</Button>
+		{/if}
 		<Button type="button" on:click={() => dispatch("showdetails", id)}>
 			Show Details
 		</Button>

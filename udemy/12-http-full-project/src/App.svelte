@@ -5,22 +5,20 @@
 	import EditMeetup from "./Meetups/EditMeetup.svelte";
 	import MeetupDetail from "./Meetups/MeetupDetail.svelte";
 	import LoadingSpinner from "./UI/LoadingSpinner.svelte";
-
-	// let meetups = ;
+	import Error from "./UI/Error.svelte";
 
 	let editMode;
 	let editedId;
 	let page = "overview";
 	let pageData = {};
 	let isLoading = true;
+	let error;
 
-	fetch(
-		"https://svelte-001-411ee-default-rtdb.europe-west1.firebasedatabase.app/meetups.json"
-	)
+	fetch("https://svelte-001-411ee-default-rtdb.europe-west1.firebasedatabase.app/meetups.json")
 		.then((res) => {
 			if (!res.ok) {
 				throw new Error(
-					"An error occurred fetching, please try again!"
+					"Fetching meetups failed, please try again later!"
 				);
 			}
 			return res.json();
@@ -35,14 +33,17 @@
 			}
 			setTimeout(() => {
 				isLoading = false;
-				meetups.setMeetups(loadedMeetups);
+				meetups.setMeetups(loadedMeetups.reverse());
 			}, 1000);
 		})
 		.catch((err) => {
+			error = err;
+			isLoading = false;
 			console.log(err);
 		});
 
 	function savedMeetup(event) {
+		if (event.detail) error = event.detail.innerError;
 		editMode = null;
 		editedId = null;
 	}
@@ -66,7 +67,15 @@
 		editMode = "edit";
 		editedId = event.detail;
 	}
+
+	function clearError() {
+		error = null;
+	}
 </script>
+
+{#if error}
+	<Error message={error.message} on:cancel={clearError} />
+{/if}
 
 <Header />
 

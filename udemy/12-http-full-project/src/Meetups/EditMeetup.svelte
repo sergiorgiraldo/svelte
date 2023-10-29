@@ -56,26 +56,34 @@
 		};
 
 		if (id) {
-			fetch(`https://svelte-001-411ee-default-rtdb.europe-west1.firebasedatabase.app/meetups/${id}.json`, {
-				method: "PATCH",
-				body: JSON.stringify(meetupData),
-				headers: { "Content-Type": "application/json" }
-			})
+			fetch(
+				`https://svelte-001-411ee-default-rtdb.europe-west1.firebasedatabase.app/meetups/${id}.json`,
+				{
+					method: "PATCH",
+					body: JSON.stringify(meetupData),
+					headers: { "Content-Type": "application/json" }
+				}
+			)
 				.then((res) => {
 					if (!res.ok) {
 						throw new Error("An error occurred, please try again!");
 					}
 					meetups.updateMeetup(id, meetupData);
+					dispatch("save");
 				})
 				.catch((err) => {
 					console.log(err);
+					dispatch("save", { innerError: err });
 				});
 		} else {
-			fetch("https://svelte-001-411ee-default-rtdb.europe-west1.firebasedatabase.app/meetups.json", {
-				method: "POST",
-				body: JSON.stringify({ ...meetupData, isFavorite: false }),
-				headers: { "Content-Type": "application/json" }
-			})
+			fetch(
+				"https://svelte-001-411ee-default-rtdb.europe-west1.firebasedatabase.app/meetups.json",
+				{
+					method: "POST",
+					body: JSON.stringify({ ...meetupData, isFavorite: false }),
+					headers: { "Content-Type": "application/json" }
+				}
+			)
 				.then((res) => {
 					if (!res.ok) {
 						throw new Error("An error occurred, please try again!");
@@ -88,25 +96,32 @@
 						isFavorite: false,
 						id: data.name
 					});
+					dispatch("save");
 				})
 				.catch((err) => {
 					console.log(err);
+					dispatch("save", { innerError: err });
 				});
 		}
-		dispatch("save");
 	}
 
 	function deleteMeetup() {
-		fetch(`https://svelte-001-411ee-default-rtdb.europe-west1.firebasedatabase.app/meetups/${id}.json`, {
-			method: "DELETE"
-		})
+		fetch(
+			`https://svelte-001-411ee-default-rtdb.europe-west1.firebasedatabase.app/meetups/${id}.json`,
+			{
+				method: "DELETE"
+			}
+		)
 			.then((res) => {
 				if (!res.ok) {
 					throw new Error("An error occurred, please try again!");
 				}
 				meetups.removeMeetup(id);
 			})
-			.catch((err) => console.log(err));
+			.catch((err) => {
+				error = err;
+				console.log(err);
+			});
 		dispatch("save");
 	}
 
