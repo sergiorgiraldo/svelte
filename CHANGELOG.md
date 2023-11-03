@@ -1,5 +1,19 @@
 # Changelog
 
+## [5.0.0](https://github.com/sergiorgiraldo/svelte/compare/v4.0.0...v5.0.0) (2023-11-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* sapper project(but deprecated ....)
+
+### Features
+
+* accessing document and body from the page ([6d90233](https://github.com/sergiorgiraldo/svelte/commit/6d902338af0776bcbf202449d75830a8011f7291))
+* cross-component scripts, see familynode.svelte ([a8a81a3](https://github.com/sergiorgiraldo/svelte/commit/a8a81a3d333e68e0976719b4ccf07390249af76a))
+* recursive and dynamic components ([0dd2920](https://github.com/sergiorgiraldo/svelte/commit/0dd29202e8b56ea7b4c62aa0e82dd1cc3cb22715))
+* sapper project(but deprecated ....) ([dbb60f5](https://github.com/sergiorgiraldo/svelte/commit/dbb60f5856d35dd6231327acf6817c6975e50f9c))
+
 ## [4.0.0](https://github.com/sergiorgiraldo/svelte/compare/v3.1.0...v4.0.0) (2023-10-29)
 
 
