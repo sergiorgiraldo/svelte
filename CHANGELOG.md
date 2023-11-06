@@ -1,5 +1,13 @@
 # Changelog
 
+## [5.1.0](https://github.com/sergiorgiraldo/svelte/compare/v5.0.0...v5.1.0) (2023-11-06)
+
+
+### Features
+
+* svelte+tailwind, svelte.kit+tailwind ([9242436](https://github.com/sergiorgiraldo/svelte/commit/924243642694e40f10906a6edfb42d2f5df77189))
+* sveltekit, with components and fetch data ([c50a5b3](https://github.com/sergiorgiraldo/svelte/commit/c50a5b39ca5601ed4ec6c960c66d0c6d033d700a))
+
 ## [5.0.0](https://github.com/sergiorgiraldo/svelte/compare/v4.0.0...v5.0.0) (2023-11-03)
 
 
