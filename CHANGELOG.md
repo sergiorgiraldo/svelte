@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.2.0](https://github.com/sergiorgiraldo/svelte/compare/v5.1.0...v5.2.0) (2023-11-09)
+
+
+### Features
+
+* moving tailwind to +layout.svelte ([315549a](https://github.com/sergiorgiraldo/svelte/commit/315549a7f97389d26405ff2d96bf88317dc169a8))
+
 ## [5.1.0](https://github.com/sergiorgiraldo/svelte/compare/v5.0.0...v5.1.0) (2023-11-06)
 
 
