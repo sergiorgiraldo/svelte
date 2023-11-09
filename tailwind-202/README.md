@@ -45,7 +45,7 @@ export default {
 </style>
 ```
 
-> app.svelte
+> src/routes/+layout.svelte
 
 ```
 <script>
