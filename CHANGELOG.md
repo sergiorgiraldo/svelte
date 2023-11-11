@@ -1,5 +1,13 @@
 # Changelog
 
+## [5.3.0](https://github.com/sergiorgiraldo/svelte/compare/v5.2.0...v5.3.0) (2023-11-11)
+
+
+### Features
+
+* how to do routing, rest verbs, forms, optional routes, etc ([c092d45](https://github.com/sergiorgiraldo/svelte/commit/c092d458cfdcf761923977e5feb9da661048a013))
+* routing with forms and capturing values entered ([14e383f](https://github.com/sergiorgiraldo/svelte/commit/14e383ff358d714fdce50784d36a5517de93f792))
+
 ## [5.2.0](https://github.com/sergiorgiraldo/svelte/compare/v5.1.0...v5.2.0) (2023-11-09)
 
 
