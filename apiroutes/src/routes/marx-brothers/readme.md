@@ -1,0 +1,1 @@
+if you multiple routes and you want a 404 for an unknown route, you should create a route that matches any /whatever/* request, and return a 404 from it
