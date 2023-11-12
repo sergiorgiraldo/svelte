@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.4.0](https://github.com/sergiorgiraldo/svelte/compare/v5.3.0...v5.4.0) (2023-11-12)
+
+
+### Features
+
+* testing automerge ([95b5169](https://github.com/sergiorgiraldo/svelte/commit/95b5169cc4e9fc4ccef3ea79a57d3d4bc5a351e4))
+
 ## [5.3.0](https://github.com/sergiorgiraldo/svelte/compare/v5.2.0...v5.3.0) (2023-11-11)
 
 
