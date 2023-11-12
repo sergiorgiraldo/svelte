@@ -1,14 +1,30 @@
+name: automerge
 on:
   pull_request:
-    branches:
-      - release-please--branches--main--components--svelte
-
+    types:
+      - labeled
+      - unlabeled
+      - synchronize
+      - opened
+      - edited
+      - ready_for_review
+      - reopened
+      - unlocked
+  pull_request_review:
+    types:
+      - submitted
+  check_suite:
+    types:
+      - completed
+  status: {}
 jobs:
-  merge:
+  automerge:
     runs-on: ubuntu-latest
     steps:
-      - name: Merge pull request
-        uses: peter-evans/merge-pull-request-action@v2
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          merge-method: squash
+      - id: automerge
+        name: automerge
+        uses: "pascalgn/automerge-action@v0.15.6"
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          MERGE_LABELS: "autorelease:pending"
+
