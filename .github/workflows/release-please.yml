@@ -16,5 +16,5 @@ jobs:
       - uses: google-github-actions/release-please-action@v3
         with:
           release-type: node
-          label: automerge
+          labels: automerge
           package-name: svelte
