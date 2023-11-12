@@ -1,5 +1,16 @@
 # Changelog
 
+## [5.5.0](https://github.com/sergiorgiraldo/svelte/compare/v5.4.0...v5.5.0) (2023-11-12)
+
+
+### Features
+
+* testing automerge ([f5dae8b](https://github.com/sergiorgiraldo/svelte/commit/f5dae8b9a8c80589dfe0f2642c7fc5961c975d9c))
+* testing automerge ([8bdab81](https://github.com/sergiorgiraldo/svelte/commit/8bdab81d3e8d446a687a3db73296c39d48908003))
+* testing automerge ([f7feeff](https://github.com/sergiorgiraldo/svelte/commit/f7feeff89d1bc037a700c74129ec0ef4f02c6a8a))
+* testing automerge ([61258c7](https://github.com/sergiorgiraldo/svelte/commit/61258c75fc033f8b3a7625a9c534fd483841433b))
+* testing automerge ([02581f7](https://github.com/sergiorgiraldo/svelte/commit/02581f763cc1f990793ab21f1818ec169eb541ad))
+
 ## [5.4.0](https://github.com/sergiorgiraldo/svelte/compare/v5.3.0...v5.4.0) (2023-11-12)
 
 
