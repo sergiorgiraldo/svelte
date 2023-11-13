@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.6.0](https://github.com/sergiorgiraldo/svelte/compare/v5.5.0...v5.6.0) (2023-11-13)
+
+
+### Features
+
+* testig release-please ([a1170d0](https://github.com/sergiorgiraldo/svelte/commit/a1170d053e73b258d71f67b8bbcdc21066d8b7eb))
+
 ## [5.5.0](https://github.com/sergiorgiraldo/svelte/compare/v5.4.0...v5.5.0) (2023-11-12)
 
 
