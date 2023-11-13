@@ -1,6 +1,7 @@
 name: automerge
 on:
-  pull_request
+  pull_request:
+    types: [opened, reopened]
 jobs:
   automerge:
     runs-on: ubuntu-latest
