@@ -30,6 +30,14 @@
 </ul>
 <hr />
 
+<h2>Company</h2>
+<ul>
+	<li><a href="/company/about">ABOUT</a>&nbsp;&nbsp;/company/about</li>
+	<li><a href="/company/ri">INVESTORS</a>&nbsp;&nbsp;/company/ri</li>
+	<li><a href="/company/dashboard">DASHBOARD</a>&nbsp;&nbsp;/company/dashboard</li>
+</ul>
+<hr />
+
 <h2>Computer</h2>
 <ul>
 	<li><a href="/computer/mouse">MOUSE</a>&nbsp;&nbsp;/computer/mouse</li>
