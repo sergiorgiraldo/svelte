@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.7.0](https://github.com/sergiorgiraldo/svelte/compare/v5.6.0...v5.7.0) (2023-11-14)
+
+
+### Features
+
+* group similar routes without changing route structure ([2dd4706](https://github.com/sergiorgiraldo/svelte/commit/2dd4706f649a9252aa9728edbbc8981f8e429233))
+
 ## [5.6.0](https://github.com/sergiorgiraldo/svelte/compare/v5.5.0...v5.6.0) (2023-11-13)
 
 
