@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.8.0](https://github.com/sergiorgiraldo/svelte/compare/v5.7.0...v5.8.0) (2023-12-01)
+
+
+### Features
+
+* major release, wooooooooooooooooooooow ([633085e](https://github.com/sergiorgiraldo/svelte/commit/633085e1ec6a7ab498c758abed5b970522cc5c65))
+
 ## [5.7.0](https://github.com/sergiorgiraldo/svelte/compare/v5.6.0...v5.7.0) (2023-11-14)
 
 
