@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.10.0](https://github.com/sergiorgiraldo/svelte/compare/v5.9.0...v5.10.0) (2024-05-23)
+
+
+### Features
+
+* blog in sveltekit ([8f93335](https://github.com/sergiorgiraldo/svelte/commit/8f933354ff6bb71c9a6e1710e776d52960d945f9))
+
 ## [5.9.0](https://github.com/sergiorgiraldo/svelte/compare/v5.8.0...v5.9.0) (2023-12-01)
 
 
