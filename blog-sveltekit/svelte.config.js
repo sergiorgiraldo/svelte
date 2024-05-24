@@ -25,7 +25,6 @@ const config = {
 		adapter: adapter(),
     prerender: {
       entries: [
-        '*',
         '/api/posts/page/*',
         '/blog/category/*/page/',
         '/blog/category/*/page/*',
