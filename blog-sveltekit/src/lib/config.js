@@ -25,5 +25,5 @@ export const navItems = [
 	}, {
 		title: 'Contact',
 		route: '/contact' 
-	},
+	}
 ]
