@@ -1,6 +1,6 @@
 {
-	"name": "sveltekit-blog-starter",
-	"version": "2.0.2",
+	"name": "sveltekit-blog",
+	"version": "1.0.0",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
@@ -22,7 +22,9 @@
 		"rehype-slug": "^5.1.0",
 		"svelte": "^4.2.7",
 		"svelte-preprocess": "^5.0.3",
-		"vite": "^5.0.12"
+		"vite": "^5.0.12",
+        "cookie": "^0.4.1",
+        "svelte-check": "^3.7.1" 
 	},
 	"type": "module"
 }

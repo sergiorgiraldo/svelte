@@ -8,7 +8,10 @@
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import { siteTitle, siteURL } from '$lib/config.js';
+    import { user } from '$lib/store/user.js'
 	export let data;
+
+    $user = data.user
 
 	const transitionIn = { delay: 150, duration: 150 };
 	const transitionOut = { duration: 100 };
