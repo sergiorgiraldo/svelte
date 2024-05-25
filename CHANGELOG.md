@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.11.0](https://github.com/sergiorgiraldo/svelte/compare/v5.10.0...v5.11.0) (2024-05-25)
+
+
+### Features
+
+* sort of authentication ([4eab130](https://github.com/sergiorgiraldo/svelte/commit/4eab130eac8a25f095208737129bc969c1133ad5))
+
 ## [5.10.0](https://github.com/sergiorgiraldo/svelte/compare/v5.9.0...v5.10.0) (2024-05-23)
 
 
