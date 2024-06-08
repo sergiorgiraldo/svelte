@@ -1,16 +1,21 @@
-import { create } from '../store/'
-import { redirect } from '@sveltejs/kit';
+import { create } from "../store/";
+import { redirect } from "@sveltejs/kit";
 
 export const prerender = false;
 
 export const actions = {
 	default: async ({ cookies, request, fetch }) => {
 		const data = await request.formData();
-		const email = data.get('email');
-		const password = data.get('password');
-		const name = data.get('name');
+		const email = data.get("email");
+		const password = data.get("password");
+		const name = data.get("name");
 
-		if (typeof email !== 'string' || typeof password !== 'string' || !email || !password) {
+		if (
+			typeof email !== "string" ||
+			typeof password !== "string" ||
+			!email ||
+			!password
+		) {
 			return {
 				status: 400,
 				body: {
@@ -19,15 +24,15 @@ export const actions = {
 			};
 		}
 
-        const user = create({ name, email, password });
+		const user = create({ name, email, password });
 
 		if (user) {
-            cookies.set('user', user, { 
-                path: '/',
-                maxAge: 60 * 60 * 24 }
-            );
+			cookies.set("user", user, {
+				path: "/",
+				maxAge: 60 * 60 * 24
+			});
 
-			throw redirect(302, '/dashboard');
+			throw redirect(302, "/dashboard");
 		} else {
 			const { errors } = await response.json();
 			return {

@@ -3,8 +3,8 @@ title: "Automatic heading links in mdsvex"
 date: "2023-10-26"
 updated: "2023-10-26"
 categories:
-  - "sveltekit"
-  - "markdown"
+    - "sveltekit"
+    - "markdown"
 coverImage: "/images/jefferson-santos-fCEJGBzAkrU-unsplash.jpg"
 coverWidth: 16
 coverHeight: 9
@@ -32,4 +32,3 @@ Lorem ipsum dolor sit amet
 ###### We're deep in h6 territory now
 
 Lorem ipsum dolor sit amet
-

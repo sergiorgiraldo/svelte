@@ -3,9 +3,9 @@ title: "A Markdown post with a Svelte component"
 date: "2023-04-28"
 updated: "2023-04-28"
 categories:
-  - "sveltekit"
-  - "markdown"
-  - "svelte"
+    - "sveltekit"
+    - "markdown"
+    - "svelte"
 coverImage: "/images/jerry-zhang-ePpaQC2c1xA-unsplash.jpg"
 coverWidth: 16
 coverHeight: 9
