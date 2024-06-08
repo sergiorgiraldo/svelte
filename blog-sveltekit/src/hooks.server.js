@@ -11,25 +11,20 @@ function isPathAllowed(path) {
 }
 
 export const handle = async ({ event, resolve }) => {
-	let user = null;
+	let user = event.cookies.get('user');
+
+    const url = new URL(event.request.url);
     
-	if (event.cookies.get('user') != undefined && event.cookies.get('user') != null) {
-        user = JSON.parse(event.cookies.get('user'));
-        event.locals.user = user;
-	}
-	const url = new URL(event.request.url);
-    
-	if (!user && !isPathAllowed(url.pathname)) {
+	if (user == "null" && !isPathAllowed(url.pathname)) {
         throw redirect(302, '/signin');
 	}
     
-	if (user) {
+	if (user != "null") {
 		if (url.pathname == '/signup' || url.pathname == '/signin') {
             throw redirect(302, '/dashboard');
 		}
 	}
     
 	const response = await resolve(event);
-    
 	return response;
 };

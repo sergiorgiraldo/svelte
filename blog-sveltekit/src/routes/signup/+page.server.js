@@ -1,4 +1,4 @@
-import { user } from '$lib/store/user.js';
+import { create } from '../store/'
 import { redirect } from '@sveltejs/kit';
 
 export const prerender = false;
@@ -19,25 +19,14 @@ export const actions = {
 			};
 		}
 
-		const response = await fetch('/users/new', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({
-				user: {
-					email,
-					password,
-					name
-				}
-			})
-		});
+        const user = create({ name, email, password });
 
-		if (response.ok) {
-            const body = await response.json();
-            cookies.set('user', JSON.stringify(body), { path: '/' });
-            cookies.set('jwt', response.headers.get('Authorization'), { path: '/' });
-    
+		if (user) {
+            cookies.set('user', user, { 
+                path: '/',
+                maxAge: 60 * 60 * 24 }
+            );
+
 			throw redirect(302, '/dashboard');
 		} else {
 			const { errors } = await response.json();
