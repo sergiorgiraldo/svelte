@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.12.0](https://github.com/sergiorgiraldo/svelte/compare/v5.11.0...v5.12.0) (2024-06-08)
+
+
+### Features
+
+* blog now works with auth ([492e83d](https://github.com/sergiorgiraldo/svelte/commit/492e83d66eef373ca7e79cb7b84768d6f31fcda4))
+
 ## [5.11.0](https://github.com/sergiorgiraldo/svelte/compare/v5.10.0...v5.11.0) (2024-05-25)
 
 
